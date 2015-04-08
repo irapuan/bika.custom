@@ -16,6 +16,15 @@ class AnalysisRequestSchemaExtender(object):
     implements(IOrderableSchemaExtender)
 
     fields = [
+         BooleanField(
+            'TesteCampo',
+            default=False,
+            widget=BooleanWidget(
+                visible={'edit': 'visible',
+                         'view': 'visible',
+                         'add': 'edit'},
+            ),
+        ),
     ]
 
     def __init__(self, context):
